@@ -25,8 +25,7 @@ print(raj._age)
 
 ########################################################################################################################
 
-# Python program showing a
-# use of property() function
+# Python program showing a use of property() function
 
 class Geek2:
     def __init__(self):

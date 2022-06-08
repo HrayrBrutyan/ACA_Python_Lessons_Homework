@@ -26,6 +26,11 @@ class Rational:
         print("GET")
         return self.__nominator
 
+    @property
+    def denominator(self):
+        print("GET")
+        return self.__denominator
+
     @nominator.setter
     def nominator(self, x):
         print("SET")
@@ -34,9 +39,13 @@ class Rational:
             self.__nominator = x // y
             self.__denominator = self.__denominator // y
 
+    def __add__(self, other):
+        x = self.nominator * other.denominator + self.denominator * other.nominator
+        y = self.denominator * other.denominator
+        return Rational(x, y)
+
 
 r = Rational(4, 6)
-print(r)
 r1 = Rational.create_obj("5/6")
 print(r1.nominator)
 r1.nominator = 15

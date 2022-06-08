@@ -1,20 +1,19 @@
 class Person:
-    def __init__(self, fn, age):
-        self.full_name = fn
-        self.age = age
-        self.gender = None
+
+    def __init__(self, fn, ln, a, g):
+        self.first_name = fn
+        self.last_name = ln
+        self.age = a
+        self.gender = g
 
     def __str__(self):
-        print("Person")
-        if self.gender == "Female":
-            return "{} - {}".format(self.full_name, self.gender)
-        else:
-            return "{} - {}, {}".format(self.full_name, self.age, self.gender)
+        # print("Person")
+        return "{} {} - {}, {}".format(self.first_name, self.last_name, self.age, self.gender)
 
 
 class Student(Person):
-    def __init__(self, fn, a, univ, fac):
-        super().__init__(fn, a)
+    def __init__(self, fn, ln, a, g, univ, fac):
+        super().__init__(fn, ln, a, g)
         self.university = univ
         self.faculty = fac
 
@@ -23,8 +22,12 @@ class Student(Person):
         return "{}, faculty of {}\n".format(self.university, self.faculty) + super().__str__()
 
 
-s = Student("Julia Smith", 32, "YSU", "Informatics and Applied Mathematics")
-print(s)
+###################################
+
+# User
+
+# s = Student("Julia", "Smith", 32, "Female", "YSU", "Informatics and Applied Mathematics")
+# print(s)
 
 
 

@@ -1,4 +1,5 @@
 # Programmer
+
 class TimeError(Exception):
     def __init__(self, msg, val):
         self.__message = "{} value out of range".format(msg)
@@ -78,6 +79,8 @@ class Time:
         self.__second = x % 60
         self.add_minute(x // 60)
 
+
+###################################
 
 # User
 
@@ -205,20 +208,24 @@ class Date:
             self.__month = m
 
 
+###################################
+
 # User
 
-d1 = Date(2022, 5, 26)
-print(d1)
-d1.add_day(220)
-print(d1)
-
-d1.set_month(13)
+# d1 = Date(2022, 5, 26)
+# print(d1)
+# d1.add_day(220)
+# print(d1)
+#
+# d1.set_month(13)
+# d1.set_month(12)
+# print(d1)
 
 
 ########################################################################################################################
 
-
 # Programmer
+
 class DateTime:
     def __init__(self, d, t):
         self.__date = d
@@ -248,22 +255,27 @@ class DateTime:
         self.__date.add_day(x // 24)
 
 
-print("Below is from DateTime class")
-d2 = Date(2022, 5, 8)
-print(d2)
-t2 = Time(7, 5, 50)
-print(t2)
+###################################
 
+# User
 
-dt = DateTime(d2, t2)
-print(dt)
-print("Add month")
-dt.add_month(8)
-print(dt)
-dt.add_minute(85)
-print(dt)
-dt.add_day(855)
-print(dt)
+# print("Below is from DateTime class")
+# d2 = Date(2022, 5, 8)
+# print(d2)
+# t2 = Time(7, 5, 50)
+# print(t2)
+#
+#
+# dt = DateTime(d2, t2)
+# print(dt)
+# print("Add month")
+# dt.add_month(8)
+# print(dt)
+# dt.add_minute(85)
+# print(dt)
+# dt.add_day(855)
+# print(dt)
+
 
 # a = Date.MONTH_DAYS
 # for i in range(len(a)):
