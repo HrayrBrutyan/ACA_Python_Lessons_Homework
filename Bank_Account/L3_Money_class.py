@@ -9,7 +9,7 @@ class Money:
         return "{} {}".format(self.amount, self.currency)
 
     def __add__(self, other):
-        print("Money add")
+        # print("Money add")
         x = self.amount
         if self.currency == other.currency:
             x += other.amount
@@ -19,7 +19,7 @@ class Money:
         return Money(self.currency, x)
 
     def __sub__(self, other):
-        print("Money sub")
+        # print("Money sub")
         x = self.amount
         if self.currency == other.currency:
             x -= other.amount

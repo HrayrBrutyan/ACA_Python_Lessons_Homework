@@ -18,7 +18,7 @@ class Student(Person):
         self.faculty = fac
 
     def __str__(self):
-        print("Student")
+        # print("Student")
         return "{}, faculty of {}\n".format(self.university, self.faculty) + super().__str__()
 
 

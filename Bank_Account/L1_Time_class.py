@@ -62,7 +62,7 @@ class Time:
 
     def add_hour(self, h):
         try:
-            if not isinstance(h, int):  # checks parametr type
+            if not isinstance(h, int):  # checks parameter type
                 raise TimeError("Hour", h)
         except TimeError as err:
             print(err)
@@ -96,14 +96,14 @@ class Time:
 # print(t)
 # t.add_second(5005)
 # print(t)
-# t.add_minute(55)
+# t.add_minute(50)
 # print(t)
 
 
 ########################################################################################################################
 
-
 # Programmer
+
 class DateError(Exception):
     def __init__(self, msg, val, fn):
         self.__message = msg
@@ -193,14 +193,14 @@ class Date:
             self.add_month(1)
         self.__day = x
 
-    def __check_month_value(self, m):
+    def check_month_value(self, m):
         if m < 0 or m > 12:
             return False
         return True
 
     def set_month(self, m):
         try:
-            if not self.__check_month_value(m):
+            if not self.check_month_value(m):
                 raise DateError("Month", m, 'set month')
         except DateError as err:
             print(err.get_info())
@@ -214,12 +214,14 @@ class Date:
 
 # d1 = Date(2022, 5, 26)
 # print(d1)
+# d1.add_month(8)
+# print(d1, "- added month")
 # d1.add_day(220)
-# print(d1)
+# print(d1, "- added days")
 #
 # d1.set_month(13)
 # d1.set_month(12)
-# print(d1)
+# print(d1, "- new month has set")
 
 
 ########################################################################################################################
@@ -234,8 +236,8 @@ class DateTime:
     def __repr__(self):
         return "{} - {}".format(self.__date, self.__time)
 
-    # def add_year(self, y):
-    #    self.__date.add_year(y)
+    def add_year(self, y):
+        self.__date.add_year(y)
 
     def add_month(self, m):
         self.__date.add_month(m)
@@ -243,39 +245,40 @@ class DateTime:
     def add_day(self, d):
         self.__date.add_day(d)
 
+    def add_hour(self, h):
+        x = self.__time.get_hour() + h
+        self.__time.add_hour(h)
+        self.__date.add_day(x // 24)
+
     def add_minute(self, m):
         self.__time.add_minute(m)
 
     def add_second(self, s):
         self.__time.add_second(s)
 
-    def add_hour(self, h):
-        x = self.__time.get_hour() + h
-        self.__time.add_hour(x % 24)
-        self.__date.add_day(x // 24)
+
 
 
 ###################################
 
 # User
 
-# print("Below is from DateTime class")
 # d2 = Date(2022, 5, 8)
 # print(d2)
 # t2 = Time(7, 5, 50)
 # print(t2)
 #
-#
 # dt = DateTime(d2, t2)
 # print(dt)
-# print("Add month")
+#
+# dt.add_hour(22)
+# print(dt, "- added hour")
+#
+# dt.add_day(35)
+# print(dt, "- added day")
+#
 # dt.add_month(8)
-# print(dt)
-# dt.add_minute(85)
-# print(dt)
-# dt.add_day(855)
-# print(dt)
-
+# print(dt, "- added month")
 
 # a = Date.MONTH_DAYS
 # for i in range(len(a)):
