@@ -3,7 +3,7 @@ class UnknownAtomError(Exception):
         self.__value = value
 
     def get_info(self):
-        return "Invalid atom name - {}\n".format(self.__value)
+        return "Invalid atom name - {}".format(self.__value)
 
 
 class Atom:
@@ -36,6 +36,7 @@ class Atom:
             return "Object does not created"
 
     def __add__(self, other):
+        print("Add function coled in Atom class")
         return Molecule([self, other])
 
 
@@ -57,6 +58,7 @@ class Molecule:
             self.__atoms.append(other)
         else:
             self.__atoms.extend(other.atoms)
+        print("Add function coled in Molecule class")
         return Molecule(self.__atoms)
 
     def __repr__(self):
@@ -77,6 +79,10 @@ a2 = Atom('O')
 a3 = Atom('C')
 a4 = Atom('N')
 a5 = Atom('P')
+
+# print(a4)
+# a5.name = "C"
+# print(a5)
 
 
 m = Molecule([a1, a3, a1, a2, a4, a1, a2, a5])
