@@ -1,3 +1,10 @@
+###
+
+from collections import Counter
+
+###
+
+
 class UnknownAtomError(Exception):
     def __init__(self, value):
         self.__value = value
@@ -36,7 +43,7 @@ class Atom:
             return "Object does not created"
 
     def __add__(self, other):
-        print("Add function coled in Atom class")
+        # print("Add function coled in Atom class")
         return Molecule([self, other])
 
 
@@ -58,20 +65,21 @@ class Molecule:
             self.__atoms.append(other)
         else:
             self.__atoms.extend(other.atoms)
-        print("Add function coled in Molecule class")
+        # print("Add function coled in Molecule class")
         return Molecule(self.__atoms)
 
     def __repr__(self):
         s = ''
+        l = []
         for i in self.__atoms:
-            s += i.name
-        freq = {}
-        for j in set(s):
-            freq[j] = str(s.count(j))
-        # print(freq)
-        s1 = ''.join(''.join((key, val)) for (key, val) in freq.items())
-        s2 = s1.replace("1", "")
-        return s2
+            l.append(i.name)
+        x = dict(Counter(l))
+        for item in x:
+            if x[item] == 1:
+                s += str(item)
+            else:
+                s += str(item) + str(x[item])
+        return "Molecule: {}".format(s)
 
 
 a1 = Atom('H')
@@ -80,9 +88,9 @@ a3 = Atom('C')
 a4 = Atom('N')
 a5 = Atom('P')
 
-# print(a4)
-# a5.name = "C"
-# print(a5)
+print(a4)
+a5.name = "T"
+print(a5)
 
 
 m = Molecule([a1, a3, a1, a2, a4, a1, a2, a5])

@@ -3,6 +3,9 @@ class Student:
         self.__work = work
         self.score = score
 
+    def __repr__(self):
+        return "Work at {}, which score is {}".format(self.__work, self.score)
+
     def __getattr__(self, item):
         return item
 
@@ -25,6 +28,7 @@ class Student:
 
 
 s = Student("YSU", 4)
+print(s)
 
 
 

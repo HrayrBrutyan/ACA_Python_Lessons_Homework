@@ -82,15 +82,15 @@ m1 = Money("USD", 100)
 ba.deal(m1)
 # print(ba)
 
-m1 = Money("RUB", 20000)  # 20,000 RUB = 200 USD
-ba.deal(m1)
+m2 = Money("RUB", 20000)  # 20,000 RUB = 200 USD
+ba.deal(m2)
 # print(ba)
 
-m2 = Money("EUR", 500)  # 500 EUR = 600 USD
-ba.fill_balance(m2)
+m3 = Money("EUR", 500)  # 500 EUR = 600 USD
+ba.fill_balance(m3)
 # print(ba)
 
-m3 = Money("EUR", 2000)  # 2,000 EUR = 2,400 USD
+m4 = Money("EUR", 2000)  # 2,000 EUR = 2,400 USD
 
 ba.deposite(m1, 6, 10)
 ba.deposite(m2, 6, 8)
