@@ -45,9 +45,10 @@ class Rational:
         return Rational(x, y)
 
 
-r = Rational(4, 6)
-print(r)
+# r = Rational(4, 6)
+# print(r)
 r1 = Rational.create_obj("5/6")
-print(r1.nominator)
-r1.nominator = 15
 print(r1)
+print(r1.nominator)
+# r1.nominator = 15
+# print(r1)
