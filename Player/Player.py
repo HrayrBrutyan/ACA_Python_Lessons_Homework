@@ -62,18 +62,14 @@ class Player:
     def play(self, n):
         return self.playlist.tracks[n-1]
 
-    def stop(self):
-        pass
-
     def next_song(self):
-
         pass
 
     def previous_song(self):
         pass
 
-
-
+    def stop(self):
+        pass
 
 
 ###################################
@@ -91,6 +87,9 @@ playlist1.load_song()
 
 player1 = Player(playlist1, 4)
 print(player1)
+print(player1.play(8))
+
+
 # print(player1.show_current_song())
 # print(player1.play(1))
 # print(player1)
