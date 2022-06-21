@@ -44,7 +44,8 @@ class Playlist:
     def view(self):
         track_number = 1
         for track in self.tracks:
-            print("N{}, artist: {}, album: {}, year: {}, name: {}".format(track_number, track.artist, track.album, track.year, track.name))
+            print("N{}, artist: {}, album: {}, year: {}, name: {}".
+                  format(track_number, track.artist, track.album, track.year, track.name.strip()))
             track_number += 1
 
 
@@ -81,7 +82,7 @@ class Player:
 
 playlist1 = Playlist("albums.txt")
 playlist1.load_song()
-# playlist1.view()
+playlist1.view()
 # print(playlist1)
 
 
